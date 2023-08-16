@@ -2,6 +2,14 @@ const form = document.querySelector("#form");
 const btnLogin = document.querySelector("#btnSubmit");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+const inputs = document.querySelectorAll("input");
+
+// todo : handler On Input remove error
+inputs.forEach((element) => {
+    element.addEventListener("input", function (e) {
+        handlerValid(element);
+    });
+});
 
 // todo : error
 function handlerError(element, msg) {
