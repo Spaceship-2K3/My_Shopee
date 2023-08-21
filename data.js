@@ -464,3 +464,5 @@ const listProductsDetail = [
         data_category: "JUJUTSUKAISEN",
     },
 ];
+
+export default listProductsDetail;

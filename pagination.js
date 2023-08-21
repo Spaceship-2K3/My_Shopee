@@ -1,19 +1,20 @@
+import listProductsDetail from "./data.js";
 const list_product = document.getElementById("list-product-js");
 const category_kind = document.querySelectorAll(".category-item-kind-js");
-
-list_product.innerHTML = listProductsDetail
-    .map((item) => {
-        let {
-            name,
-            discount,
-            image,
-            old_price,
-            new_price,
-            make_country,
-            manufacturer,
-            data_category,
-        } = item;
-        return `
+function generalProducts() {
+    list_product.innerHTML = listProductsDetail
+        .map((item) => {
+            let {
+                name,
+                discount,
+                image,
+                old_price,
+                new_price,
+                make_country,
+                manufacturer,
+                data_category,
+            } = item;
+            return `
     <div class="col m-4 c-6 l-2-4" data-kind="${data_category}" >
         <a
             href="#!"
@@ -117,9 +118,11 @@ list_product.innerHTML = listProductsDetail
     </div>
 
     `;
-    })
-    .join("");
-
+        })
+        .join("");
+}
 category_kind.forEach((item) => {
     item.addEventListener("click", (e) => {});
 });
+
+export { generalProducts };

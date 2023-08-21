@@ -1,15 +1,35 @@
-/**
-<div class="modal">
+import listProductsDetail from "./data.js";
+
+function showModal() {
+    document.querySelectorAll(".home-product-item").forEach((item) => {
+        const product_name = item.querySelector("h4").innerHTML.trim();
+        const product_info = listProductsDetail.find((x) => {
+            return x.name == product_name;
+        });
+        item.addEventListener("click", (e) => {
+            let {
+                name,
+                discount,
+                image,
+                old_price,
+                new_price,
+                make_country,
+                manufacturer,
+                data_category,
+            } = product_info;
+
+            let temple = `
+    <div class="modal">
                 <div class="modal-container">
-                    <button type="button" class="modal__close-btn">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="modal__close-btn" onClick ="closeModal()">
+                        <i class="fa-solid fa-xmark" ></i>
                     </button>
                     <div class="section-left">
                         <!-- ! Slider -->
                         <div class="slider">
                             <div class="slider__img-wrap">
                                 <img
-                                    src="./assets/img/product/DB1.png"
+                                    src="${image}"
                                     alt=""
                                     class="slider__img-main"
                                 />
@@ -29,7 +49,7 @@
                                             id="slider__img-item-main"
                                         >
                                             <img
-                                                src="./assets/img/product/DB1.png"
+                                                src="${image}"
                                                 alt=""
                                                 class="slider__img"
                                             />
@@ -167,7 +187,7 @@
                         <div class="modal__content-product">
                             <h2 class="modal__content-heading">
                                 <span>Yêu thích</span>
-                                Mô hình One Piece Roronoa Zoro 3000 Thế Giới POP
+                                Mô hình ${name} 3000 Thế Giới POP
                                 cao 20cm, Nặng 750G - Mô Hình Zoro trang trí One
                                 Piece Figure Haki Shop
                             </h2>
@@ -273,7 +293,7 @@
 
                             <div class="modal__prices">
                                 <h2 class="modal__prices-heading color-primary">
-                                    <span>₫</span>50.000 - <span>₫</span>139.000
+                                    <span>₫</span>${new_price} - <span>₫</span> ${old_price}
                                 </h2>
                                 <div class="anything-cheap">
                                     <svg
@@ -417,7 +437,11 @@
                 </div>
             </div>
         </div>
+`;
 
+            document.body.insertAdjacentHTML("afterbegin", temple);
+        });
+    });
+}
 
-
-*/
+export default showModal;

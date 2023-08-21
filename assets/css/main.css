@@ -410,7 +410,7 @@
     display: inline-flex;
     width: 100%;
     position: absolute;
-    top: 32px;
+    bottom: -18px;
     padding-left: 0;
 }
 .header__search-trending-item a {
@@ -1160,6 +1160,7 @@ i.home-product-item__like--fil {
 
 #footer__top-item {
     display: flex;
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -1180,9 +1181,13 @@ i.home-product-item__like--fil {
     flex: 1;
     padding-left: 10px;
 }
+.footer__top-info p:first-child {
+    margin-bottom: 10px;
+}
 
 .footer__container {
     background-color: var(--white-color);
+    margin: 30px 0;
 }
 
 .footer__heading {
