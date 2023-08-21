@@ -1,4 +1,4 @@
-const listProducts = [
+const listProductsDetail = [
     // ! Mô hình Onepiece
     {
         name: "Donquixote Doflamingo",

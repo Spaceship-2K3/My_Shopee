@@ -1,0 +1,344 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    width: 1000px;
+    max-height: 100vh;
+    padding: 12px;
+    position: relative;
+}
+
+.section-left {
+    width: 46%;
+}
+
+.slider__img-details {
+    position: relative;
+}
+
+.slider__img-main {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.slider__img-list {
+    padding-left: 0;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+
+    overflow: hidden;
+}
+
+.slider__img-list-wrap {
+    display: flex;
+    gap: 4px;
+    /* transform: translateX(-20%); */
+}
+
+.slider__img-item {
+    flex: 1 0 calc(20% - 6px);
+}
+
+.slider__img {
+    display: inline-block;
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.slider__img:not(.active):hover {
+    background-color: var(--primary-color);
+}
+.slider__img-item.active {
+    background-color: var(--primary-color);
+}
+
+.slider__btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.slider__btn:hover {
+    opacity: 0.9;
+}
+
+#slider__btn-prev {
+    left: 0;
+}
+#slider__btn-next {
+    right: 0;
+}
+
+/* ! interact */
+.interact {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.interact__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 4px;
+    position: relative;
+}
+.interact__socials::after {
+    content: "";
+    position: absolute;
+    right: -5%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(232, 232, 232);
+}
+
+.interact__socials-title,
+.interact__like-title {
+    font-size: 1.3rem;
+    margin: 0 4px;
+}
+.interact__social-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 100rem;
+}
+
+.interact__like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* ! Right-content */
+.section-right {
+    flex: 1;
+    padding: 10px 20px;
+}
+
+.modal__content-heading {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    font-weight: 400;
+    color: rgb(18, 17, 17);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.modal__content-heading span {
+    font-size: 1.36rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 3px 5px;
+    border-radius: 3px;
+    height: 18px;
+}
+
+.modal__content-statistical {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.modal__content-statistical-left {
+    display: flex;
+    align-items: center;
+}
+.content-separation {
+    border-right: 1px solid var(--border-color);
+    padding-right: 20px;
+}
+.ratings-reviews,
+.feedback,
+.sales-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.ratings-reviews-quantity,
+.feedback-quantity,
+.sales-info-quantity {
+    font-size: 1.49rem;
+    color: #111;
+    margin-right: 10px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.shopee-svg-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    color: var(--primary-color);
+    stroke: var(--primary-color);
+    fill: var(--primary-color);
+}
+
+.feedback-title,
+.sales-info-title,
+.modal__content-statistical-report {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+/* ! modal__prices */
+
+.modal__prices {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 3px;
+    margin: 20px 0;
+}
+.modal__prices-heading {
+    font-size: 3rem;
+    font-weight: 400;
+}
+.modal__prices-heading span {
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.anything-cheap {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+.anything-cheap-img {
+}
+
+.anything-cheap__content {
+    margin-left: 10px;
+}
+.anything-cheap__content-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+.anything-cheap__content-img {
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    border: 1px solid var(--black-color);
+    margin-left: 8px;
+}
+.anything-cheap__content-desc,
+.modal__quantity-available {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.modal__deal,
+.modal__quantity {
+    display: flex;
+    align-items: center;
+}
+.modal__deal-title,
+.modal__quantity-title {
+    font-size: 1.36rem;
+    color: var(--text-color);
+    width: 20%;
+}
+.modal__deal span {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 3px 4px;
+    border-radius: 2px;
+    font-size: 1.2rem;
+}
+
+.modal__quantity {
+    margin-top: 20px;
+}
+
+.modal__quantity-wrap-btns {
+    display: flex;
+}
+.modal__quantity-wrap-btn,
+.modal__quantity-number {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    font-size: 1.3rem;
+}
+
+.modal__quantity-number {
+    border-left: none;
+    border-right: none;
+    font-size: 1.45rem;
+    color: var(--black-color);
+    padding: 8px 20px;
+}
+
+.modal__quantity-available {
+    font-size: 1.27rem;
+    margin-left: 18px;
+}
+
+.modal__buy {
+    margin-top: 40px;
+}
+.modal__buy-btn {
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 1.44rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+    min-width: 178px;
+    cursor: pointer;
+}
+.modal__buy-btn:hover {
+    opacity: 0.85;
+}
+
+.modal__buy-btn--addBag {
+    background-color: rgb(255, 238, 232);
+    border: 1px solid rgb(238, 77, 45);
+    color: rgb(238, 77, 45);
+}
+
+.modal__buy-btn--now {
+    background-color: rgb(238, 77, 45);
+    color: #fff;
+}
+
+.modal__close-btn {
+    position: absolute;
+    font-size: 2.3rem;
+    right: 12px;
+    top: 15px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.modal__close-btn:hover i {
+    opacity: 0.8;
+}

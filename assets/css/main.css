@@ -996,35 +996,34 @@
 
 .home-product-item-img {
     padding-top: 100%;
-    background-size: contain;
+    background-size: cover;
     border-radius: 3px 3px 0 0;
     background-repeat: no-repeat;
     background-position: center;
 }
 .home-product-item__name {
-    font-weight: 100;
     color: var(--black-color);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.79rem;
-    margin: 8px 10px;
+    margin: 0px 10px;
     /* word limit */
     height: 3.63rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    font-weight: 400;
+    padding: 10px 0;
 }
 .home-product-item__price {
     margin-bottom: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     font-size: 1.2rem;
-    justify-content: space-between;
     height: 1.4rem;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
 }
 .home-product-item__price-old {
     margin-left: 10px;
