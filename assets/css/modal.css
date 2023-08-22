@@ -25,10 +25,13 @@
 
 .slider__img-details {
     position: relative;
+    margin: 14px 0;
 }
 
 .slider__img-main {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
     border-radius: 4px;
 }
 
@@ -102,7 +105,6 @@
 .interact {
     display: flex;
     justify-content: space-between;
-    margin-top: 18px;
 }
 
 .interact__socials {

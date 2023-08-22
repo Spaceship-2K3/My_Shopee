@@ -1,11 +1,41 @@
 import listProductsDetail from "./data.js";
 
-function showModal() {
+// todo : close modal
+function closeModal() {
+    const modal = document.querySelector(".modal");
+    const closeButton = document.querySelector(".modal__close-btn");
+    if (closeButton) {
+        closeButton.addEventListener("click", () => {
+            modal.remove();
+        });
+    }
+}
+
+// todo : handel clickImg
+function handleChangeMainImg() {
+    const img_main = document.querySelector(".slider__img-main");
+    const img_sub = document.querySelectorAll(".slider__img");
+
+    img_sub.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            img_sub.forEach((item) => {
+                item.parentElement.classList.remove("active");
+            });
+
+            const newSrc = e.target.getAttribute("src"); // Lấy đường dẫn mới từ ảnh phụ
+            e.target.parentElement.classList.add("active");
+            img_main.src = newSrc; // Thay đổi đường dẫn ảnh chính
+        });
+    });
+}
+
+function modal() {
     document.querySelectorAll(".home-product-item").forEach((item) => {
         const product_name = item.querySelector("h4").innerHTML.trim();
         const product_info = listProductsDetail.find((x) => {
             return x.name == product_name;
         });
+
         item.addEventListener("click", (e) => {
             let {
                 name,
@@ -19,9 +49,9 @@ function showModal() {
             } = product_info;
 
             let temple = `
-    <div class="modal">
+    <div class="modal" id="modal">
                 <div class="modal-container">
-                    <button type="button" class="modal__close-btn" onClick ="closeModal()">
+                    <button type="button" class="modal__close-btn">
                         <i class="fa-solid fa-xmark" ></i>
                     </button>
                     <div class="section-left">
@@ -438,10 +468,11 @@ function showModal() {
             </div>
         </div>
 `;
-
             document.body.insertAdjacentHTML("afterbegin", temple);
+            closeModal();
+            handleChangeMainImg();
         });
     });
 }
 
-export default showModal;
+export default modal;

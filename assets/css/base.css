@@ -87,7 +87,7 @@ a {
 
 /* .color-primary */
 .color-primary {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
 /* select */
