@@ -88,6 +88,7 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    z-index: 1;
 }
 
 .slider__btn:hover {

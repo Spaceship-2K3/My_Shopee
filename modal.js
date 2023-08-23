@@ -4,11 +4,17 @@ import listProductsDetail from "./data.js";
 function closeModal() {
     const modal = document.querySelector(".modal");
     const closeButton = document.querySelector(".modal__close-btn");
-    if (closeButton) {
-        closeButton.addEventListener("click", () => {
-            modal.remove();
-        });
-    }
+    const modal_container = document.querySelector(".modal-container");
+    closeButton.addEventListener("click", () => {
+        modal.remove();
+    });
+
+    modal.addEventListener("click", function (e) {
+        modal.remove();
+    });
+    modal_container.addEventListener("click", function (e) {
+        e.stopPropagation();
+    });
 }
 
 // todo : handel clickImg
@@ -26,6 +32,42 @@ function handleChangeMainImg() {
             e.target.parentElement.classList.add("active");
             img_main.src = newSrc; // Thay đổi đường dẫn ảnh chính
         });
+    });
+}
+
+// todo : handel slider
+function handelSlider() {
+    const btn_next = document.querySelector("#slider__btn-next");
+    const btn_prev = document.querySelector("#slider__btn-prev");
+    const slider_list = document.querySelector(".slider__img-list");
+    const slider_items = document.querySelectorAll(".slider__img-item");
+    const slider_wrapper = document.querySelector(".slider__img-list-wrap");
+    let slider_length = slider_items.length;
+    let currentIndex = 0;
+    let positionX = 0;
+    let width_slider_item = slider_items[0].offsetWidth;
+
+    // todo : btn_next
+    btn_next.addEventListener("click", function (e) {
+        if (currentIndex < slider_length - 5) {
+            currentIndex++;
+        }
+        positionX = -1 * width_slider_item * currentIndex;
+        slider_wrapper.style.transform = `translateX(${positionX}px)`;
+    });
+
+    //todo : prev_btn
+    btn_prev.addEventListener("click", function (e) {
+        if (currentIndex < 1) {
+            return;
+        }
+        currentIndex--;
+        if (positionX > 0) {
+            return;
+        } else {
+            positionX = positionX + width_slider_item;
+        }
+        slider_wrapper.style.transform = `translateX(${positionX}px)`;
     });
 }
 
@@ -471,6 +513,7 @@ function modal() {
             document.body.insertAdjacentHTML("afterbegin", temple);
             closeModal();
             handleChangeMainImg();
+            handelSlider();
         });
     });
 }
