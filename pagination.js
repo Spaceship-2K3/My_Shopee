@@ -107,7 +107,7 @@ function generalProducts() {
             >
                 <span
                     class="home-product-item__sale-off-percent"
-                    >${discount}%</span
+                    >${discount}</span
                 >
                 <span
                     class="home-product-item__sale-off-label"

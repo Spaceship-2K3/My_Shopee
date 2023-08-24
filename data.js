@@ -9,6 +9,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Onepiece",
+        id: "OnepieceA",
     },
     {
         name: "Monkey D. Luffy",
@@ -19,6 +20,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Onepiece",
+        id: "OnepieceB",
     },
     {
         name: "Roronoa Zoro",
@@ -29,6 +31,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Onepiece",
+        id: "OnepieceC",
     },
     {
         name: "Portgas D. Ace",
@@ -39,6 +42,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Onepiece",
+        id: "OnepieceD",
     },
     {
         name: "Boa Hancock.",
@@ -49,6 +53,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Onepiece",
+        id: "OnepieceE",
     },
 
     // ! Mô hình Dragon Ball
@@ -61,6 +66,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "DragonBall",
+        id: "DragonBallA",
     },
     {
         name: "Krillin",
@@ -71,6 +77,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "DragonBall",
+        id: "DragonBallB",
     },
     {
         name: "Yamcha",
@@ -81,6 +88,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "DragonBall",
+        id: "DragonBallC",
     },
     {
         name: "Trunks",
@@ -91,6 +99,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "DragonBall",
+        id: "DragonBallD",
     },
     {
         name: "Son Goten",
@@ -101,6 +110,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "DragonBall",
+        id: "DragonBallE",
     },
 
     // ! Mô hình Naruto
@@ -113,6 +123,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Naruto",
+        id: "NarutoA",
     },
     {
         name: "Uchiha Sasuke",
@@ -123,6 +134,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Naruto",
+        id: "NarutoB",
     },
     {
         name: "Senju Tobirama",
@@ -133,6 +145,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Naruto",
+        id: "NarutoC",
     },
     {
         name: "Namikaze Minato",
@@ -143,6 +156,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Naruto",
+        id: "NarutoD",
     },
     {
         name: "Senju Hashirma",
@@ -153,6 +167,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Naruto",
+        id: "NarutoE",
     },
 
     // ! Mô hình  DC
@@ -165,6 +180,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "DC",
+        id: "DCA",
     },
     {
         name: "Batman",
@@ -175,6 +191,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "DC",
+        id: "DCB",
     },
     {
         name: "Watchmen ",
@@ -185,6 +202,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "DC",
+        id: "DCC",
     },
     {
         name: "Flash",
@@ -195,6 +213,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "DC",
+        id: "DCD",
     },
     {
         name: "Superman",
@@ -205,6 +224,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "DC",
+        id: "DCE",
     },
 
     // ! Mô hình Marvel
@@ -217,6 +237,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Marvel",
+        id: "MarvelA",
     },
     {
         name: "Thor",
@@ -227,6 +248,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Marvel",
+        id: "MarvelB",
     },
     {
         name: " Captain America ",
@@ -237,6 +259,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Marvel",
+        id: "MarvelC",
     },
     {
         name: "Spider-Man",
@@ -247,6 +270,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Marvel",
+        id: "MarvelD",
     },
     {
         name: "Hulk",
@@ -257,6 +281,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Marvel",
+        id: "MarvelE",
     },
 
     // ! Mô hình  Kiếm Sĩ
@@ -269,6 +294,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Ks",
+        id: "KsA",
     },
     {
         name: "Sabito",
@@ -279,6 +305,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Ks",
+        id: "KsB",
     },
     {
         name: "Gyuutarou ",
@@ -289,6 +316,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Ks",
+        id: "KsC",
     },
     {
         name: "Kokushibou ",
@@ -299,6 +327,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Ks",
+        id: "KsD",
     },
     {
         name: " Uzui Tengen.",
@@ -309,6 +338,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Ks",
+        id: "KsE",
     },
     // ! Mô hình  Atack
     {
@@ -320,6 +350,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Atack",
+        id: "AtackA",
     },
     {
         name: "Erwin Smith",
@@ -330,6 +361,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Atack",
+        id: "AtackB",
     },
     {
         name: "Levi ",
@@ -340,6 +372,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Atack",
+        id: "AtackC",
     },
     {
         name: "Annie Leonhart",
@@ -350,6 +383,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Atack",
+        id: "AtackD",
     },
     {
         name: "BERTHOLT HOOVER",
@@ -360,6 +394,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Atack",
+        id: "AtackE",
     },
     // ! Mô hình  Transformers
     {
@@ -371,6 +406,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "Transformers",
+        id: "TransformersA",
     },
     {
         name: "Ironhide",
@@ -381,6 +417,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "Transformers",
+        id: "TransformersB",
     },
     {
         name: "Optimus Prime ",
@@ -391,6 +428,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "Transformers",
+        id: "TransformersC",
     },
     {
         name: "Bumblebee",
@@ -401,6 +439,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "Transformers",
+        id: "TransformersD",
     },
     {
         name: "Megatron",
@@ -411,6 +450,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "Transformers",
+        id: "TransformersE",
     },
     // ! Mô hình  Chú Thuật
     {
@@ -422,6 +462,7 @@ const listProductsDetail = [
         make_country: "China",
         manufacturer: "G5 Studio",
         data_category: "JUJUTSUKAISEN",
+        id: "JUJUTSUKAISENA",
     },
     {
         name: "Gojo Satoru",
@@ -432,6 +473,7 @@ const listProductsDetail = [
         make_country: "Viet Nam",
         manufacturer: "MegaHouse",
         data_category: "JUJUTSUKAISEN",
+        id: "JUJUTSUKAISENB",
     },
     {
         name: "Sukuna ",
@@ -442,6 +484,7 @@ const listProductsDetail = [
         make_country: "Japan",
         manufacturer: "Whoo",
         data_category: "JUJUTSUKAISEN",
+        id: "JUJUTSUKAISENC",
     },
     {
         name: "Geto Suguru",
@@ -452,6 +495,7 @@ const listProductsDetail = [
         make_country: "England",
         manufacturer: "MRC",
         data_category: "JUJUTSUKAISEN",
+        id: "JUJUTSUKAISEND",
     },
     {
         name: "Fushiguro Megumi",
@@ -462,6 +506,7 @@ const listProductsDetail = [
         make_country: "Russia",
         manufacturer: "Mixed Lot",
         data_category: "JUJUTSUKAISEN",
+        id: "JUJUTSUKAISENE",
     },
 ];
 

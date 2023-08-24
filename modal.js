@@ -1,5 +1,57 @@
 import listProductsDetail from "./data.js";
 
+// todo : incrementItem
+function incrementItem() {
+    const btn_increment = document.querySelector("#btn_increment");
+    btn_increment.addEventListener("click", function (e) {
+        const selected_Id = document.querySelector(".modal-container");
+        let search = basket.find((item) => {
+            return item.id === selected_Id.id;
+        });
+
+        if (search === undefined) {
+            basket.push({
+                id: selected_Id.id,
+                quantity: 1,
+            });
+        } else {
+            search.quantity += 1;
+        }
+        localStorage.setItem("data", JSON.stringify(basket));
+        updateQuantity();
+    });
+}
+
+// todo : decrementItem
+function decrementItem() {
+    const btn_decrement = document.querySelector("#btn_decrement");
+    btn_decrement.addEventListener("click", function (e) {
+        const selected_Id = document.querySelector(".modal-container");
+        let search = basket.find((item) => {
+            return item.id === selected_Id.id;
+        });
+        if (search === undefined) return;
+        else if (search.quantity < 1) return;
+        else {
+            search.quantity -= 1;
+        }
+        localStorage.setItem("data", JSON.stringify(basket));
+        updateQuantity();
+    });
+}
+
+// todo : update
+function updateQuantity() {
+    let product_number = document.querySelector(".modal__quantity-number");
+    const selected_Id = document.querySelector(".modal-container");
+    if (selected_Id) {
+        let search = basket.find((item) => {
+            return item.id === selected_Id.id;
+        });
+        product_number.innerHTML = search.quantity;
+    }
+}
+
 // todo : close modal
 function closeModal() {
     const modal = document.querySelector(".modal");
@@ -16,7 +68,7 @@ function closeModal() {
         e.stopPropagation();
     });
 }
-
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 // todo : handel clickImg
 function handleChangeMainImg() {
     const img_main = document.querySelector(".slider__img-main");
@@ -34,7 +86,6 @@ function handleChangeMainImg() {
         });
     });
 }
-
 // todo : handel slider
 function handelSlider() {
     const btn_next = document.querySelector("#slider__btn-next");
@@ -71,6 +122,7 @@ function handelSlider() {
     });
 }
 
+// ! Modal
 function modal() {
     document.querySelectorAll(".home-product-item").forEach((item) => {
         const product_name = item.querySelector("h4").innerHTML.trim();
@@ -88,11 +140,17 @@ function modal() {
                 make_country,
                 manufacturer,
                 data_category,
+                id,
             } = product_info;
-
+            let search =
+                basket.find((item) => {
+                    return item.id === id;
+                }) || [];
+            let number_product =
+                search.quantity === undefined ? 0 : search.quantity;
             let temple = `
-    <div class="modal" id="modal">
-                <div class="modal-container">
+            <div class="modal" id="modal">
+                <div class="modal-container" id="${id}">
                     <button type="button" class="modal__close-btn">
                         <i class="fa-solid fa-xmark" ></i>
                     </button>
@@ -474,13 +532,13 @@ function modal() {
                         <div class="modal__quantity">
                             <p class="modal__quantity-title">Số Lượng</p>
                             <div class="modal__quantity-wrap-btns">
-                                <button class="modal__quantity-wrap-btn">
+                                <button class="modal__quantity-wrap-btn" id="btn_increment">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                                 <span class="modal__quantity-number"
-                                    >0</span
+                                    >${number_product}</span
                                 >
-                                <button class="modal__quantity-wrap-btn">
+                                <button class="modal__quantity-wrap-btn" id="btn_decrement">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
                             </div>
@@ -514,8 +572,11 @@ function modal() {
             closeModal();
             handleChangeMainImg();
             handelSlider();
+            incrementItem();
+            decrementItem();
         });
     });
 }
 
 export default modal;
+export { basket };
