@@ -399,11 +399,14 @@
 /*  Header__search  */
 .header__search {
     display: flex;
-    flex: 1;
     height: 40px;
     background-color: var(--white-color);
     border-radius: 3px;
     position: relative;
+}
+
+.header__search--index {
+    flex: 1;
 }
 .header__search-trending {
     list-style: none;
