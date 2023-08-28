@@ -1,4 +1,5 @@
 import listProductsDetail from "./data.js";
+import { handlerErrorQuantity, handlerBtnBuyNow } from "./cart-drawer.js";
 
 // todo : incrementItem
 function incrementItem() {
@@ -19,6 +20,7 @@ function incrementItem() {
         }
         localStorage.setItem("data", JSON.stringify(basket));
         updateQuantity();
+        handlerErrorQuantity();
     });
 }
 
@@ -37,6 +39,7 @@ function decrementItem() {
         }
         localStorage.setItem("data", JSON.stringify(basket));
         updateQuantity();
+        handlerErrorQuantity();
     });
 }
 
@@ -535,7 +538,7 @@ function modal() {
                                 <button class="modal__quantity-wrap-btn" id="btn_increment">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
-                                <span class="modal__quantity-number"
+                                <span class="modal__quantity-number" id="modal__quantity-number-js"
                                     >${number_product}</span
                                 >
                                 <button class="modal__quantity-wrap-btn" id="btn_decrement">
@@ -547,6 +550,10 @@ function modal() {
                             </p>
                         </div>
 
+                        <div class="modal__error-quantity">
+                            <i class="fa-solid fa-triangle-exclamation modal__error-quantity-icon"></i>
+                            <p class="modal__error-quantity-desc">Vui Lòng Nhập Số Lượng Của sản phẩm </p>
+                        </div>
                         <div class="modal__buy">
                             <button
                                 class="modal__buy-btn color-primary modal__buy-btn--addBag"
@@ -574,6 +581,8 @@ function modal() {
             handelSlider();
             incrementItem();
             decrementItem();
+            handlerErrorQuantity();
+            handlerBtnBuyNow();
         });
     });
 }

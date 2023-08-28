@@ -294,6 +294,8 @@
 
 .table__footer-all {
     margin: 0 20px 0 22px;
+    width: 180px;
+    padding: 0 20px;
 }
 
 .table__footer-control-pay-btn,
@@ -334,4 +336,41 @@
     width: 168px;
     font-size: 1.7rem;
     font-weight: 400;
+}
+
+/*  table__data-checkbox */
+.table__data-checkbox {
+    position: relative;
+}
+.table__data-checkbox label::after,
+.table__data-checkbox label::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+}
+.table__data-checkbox label::after {
+    width: 16px;
+    height: 16px;
+    top: -7px;
+    left: 20px;
+    border-radius: 3px;
+    border: 1px solid rgb(219, 219, 219);
+}
+.table__data-checkbox .table__data-checkbox-btn:checked ~ label::before {
+    height: 5px;
+    width: 10px;
+    top: -3px;
+    left: 23px;
+    border-left: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--white-color);
+    rotate: -45deg;
+    z-index: 1;
+}
+
+.table__data-checkbox .table__data-checkbox-btn:checked ~ label::after {
+    background-color: var(--primary-color);
+}
+
+.table__data-checkbox-btn {
+    display: none;
 }
