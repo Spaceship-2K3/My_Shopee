@@ -1,10 +1,11 @@
 import listProductsDetail from "./data.js";
 import { handlerErrorQuantity, handlerBtnBuyNow } from "./cart-drawer.js";
-
+import { handlerCartIcon, updateQuantityIcon } from "./cart-icon.js";
 // todo : incrementItem
 function incrementItem() {
     const btn_increment = document.querySelector("#btn_increment");
     btn_increment.addEventListener("click", function (e) {
+        let basket = JSON.parse(localStorage.getItem("data")) || [];
         const selected_Id = document.querySelector(".modal-container");
         let search = basket.find((item) => {
             return item.id === selected_Id.id;
@@ -21,6 +22,8 @@ function incrementItem() {
         localStorage.setItem("data", JSON.stringify(basket));
         updateQuantity();
         handlerErrorQuantity();
+        updateQuantityIcon();
+        handlerCartIcon();
     });
 }
 
@@ -28,6 +31,7 @@ function incrementItem() {
 function decrementItem() {
     const btn_decrement = document.querySelector("#btn_decrement");
     btn_decrement.addEventListener("click", function (e) {
+        let basket = JSON.parse(localStorage.getItem("data")) || [];
         const selected_Id = document.querySelector(".modal-container");
         let search = basket.find((item) => {
             return item.id === selected_Id.id;
@@ -40,11 +44,14 @@ function decrementItem() {
         localStorage.setItem("data", JSON.stringify(basket));
         updateQuantity();
         handlerErrorQuantity();
+        updateQuantityIcon();
+        handlerCartIcon();
     });
 }
 
 // todo : update
 function updateQuantity() {
+    let basket = JSON.parse(localStorage.getItem("data")) || [];
     let product_number = document.querySelector(".modal__quantity-number");
     const selected_Id = document.querySelector(".modal-container");
     if (selected_Id) {
@@ -583,9 +590,10 @@ function modal() {
             decrementItem();
             handlerErrorQuantity();
             handlerBtnBuyNow();
+            updateQuantityIcon();
+            handlerCartIcon();
         });
     });
 }
 
-export default modal;
-export { basket };
+export { basket, updateQuantity, modal };

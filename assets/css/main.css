@@ -613,6 +613,7 @@
 }
 .header__cart-list {
     width: 405px;
+    min-height: 180px;
     position: absolute;
     top: 160%;
     right: 30%;
@@ -652,19 +653,14 @@
 }
 .header__cart--no-cart-img {
     width: 55%;
-    display: none;
+    padding-top: 10px;
 }
 
 .header__cart-list--no-cart-msg {
-    display: none;
     color: black;
     font-size: 1.25rem;
     margin-top: 4.5px;
-}
-
-/* Khi co class --no-cart thi hien ra img and text */
-.header__cart-list--no-cart .header__cart--no-cart-img,
-.header__cart-list--no-cart .header__cart-list--no-cart-msg {
+    padding: 10px 0;
     display: block;
 }
 /* header__cart-list--has-notify */
@@ -1132,7 +1128,7 @@ i.home-product-item__like--fil {
     position: absolute;
     border-width: 0 20px 8px;
     border-style: solid;
-    bottom: -8px;
+    bottom: -7px;
     border-color: transparent rgba(255, 221, 86, 0.95) transparent
         rgba(255, 221, 86, 0.95);
 }
