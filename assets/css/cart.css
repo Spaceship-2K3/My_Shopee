@@ -338,6 +338,10 @@
     font-weight: 400;
 }
 
+.table__footer-delete {
+    width: 100px;
+}
+
 /*  table__data-checkbox */
 .table__data-checkbox {
     position: relative;
