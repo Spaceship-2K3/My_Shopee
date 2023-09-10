@@ -1,7 +1,6 @@
 import { updateQuantity, modal } from "./modal.js";
-import { generalProducts } from "./pagination.js";
 import { handlerCartIcon, updateQuantityIcon } from "./cart-icon.js";
-generalProducts();
+
 modal();
 updateQuantityIcon();
 handlerCartIcon();
